@@ -57,6 +57,7 @@ Hey! This is only optional because you may have set it up already... you definit
     * **Using macOS**: why? but uh, run the pkg :man_shrugging:
 3. (Optional) Configure the plugin
     ![](/install.md%20images/websocket_config.png?raw=true)
+    
     You don't need to make any changes here for Switchat to work. However, if you enable authentication (recommended), you will need to ensure you copy the password in to the `settings.js` file
 
 ### Setting up chat messages
