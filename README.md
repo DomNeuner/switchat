@@ -10,7 +10,7 @@ Download the latest release from the releases page
 
 # How to install
 
-Check out our [install guide here](#).
+Check out our [install guide here](https://github.com/DomNeuner/switchat/blob/main/INSTALL.md).
 
 # Need support?
 
