@@ -14,4 +14,5 @@ Check out our [install guide here](#).
 
 # Need support?
 
-Tweet me at [twitter.com/DomNeuner]
+Tweet me - [twitter.com/DomNeuner](https://twitter.com/DomNeuner)
+Join the discord - [discord.gg/Nrgsan27](https://discord.gg/Nrgsan27)
