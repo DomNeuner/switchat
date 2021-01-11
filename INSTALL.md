@@ -37,7 +37,7 @@ You also need to download Switchat from the [Releases](#) page.
    1. Add a new browser source to your scene.
    1. Name it whatever you want :man_shrugging:
    1. Select `local file` and then browse to select the `switchat.html` file in the `switchat` folder, whereever you saved it!
-    ![](/switchat/install.md%20images/browser_source_properties.png) 
+    ![](/install.md%20images/browser_source_properties.png?raw=true) 
    1. Nothing else needs to change, click OK on the source.
    1. Ensure you copy this to all your scenes.
 1. Party hard.
