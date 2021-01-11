@@ -98,7 +98,8 @@ Okay cool, you're using Streamelements as your chatbot already? Coolio, we can m
     ![](/imgs/jebaited_token.png?raw=true)
 
 1. Copy your token from the `Current tokens:` section to the `token` field in `settings.js`
-1. Set `service` in `settings.js` to `streamelements`
+1. Set `service` in `settings.js` to `streamelements` 
+
     ![](/imgs/settings_se.png?raw=true)
 
 1. Save `settings.js`
