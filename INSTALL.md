@@ -55,9 +55,9 @@ Hey! This is only optional because you may have set it up already... you definit
    * **Using the installer (recommended, works only with combined 32/64-bit installations)**: download it, launch it and follow the instructions.
     * **Using the obs-websocket-4.8.0-Windows.zip archive**: copy the contents of the archive to the root of your OBS Studio installation folder `(either C:\Program Files\obs-studio or C:\Program Files (x86)\obs-studio)`.
     * **Using macOS**: why? but uh, run the pkg :man_shrugging:
-3. (Optional) Configure the plugin
+3. (Optional) Configure the plugin 
     ![](/install.md%20images/websocket_config.png?raw=true)
-    
+
     You don't need to make any changes here for Switchat to work. However, if you enable authentication (recommended), you will need to ensure you copy the password in to the `settings.js` file
 
 ### Setting up chat messages
