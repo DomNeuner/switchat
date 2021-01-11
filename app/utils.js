@@ -14,6 +14,7 @@ function chatPost(message) {
     if ( chatService === "twitch" ) {
         ComfyJS.Say ( message );
     } else if ( chatService === "jebaited" ) {
+        console.log('trying to send message: ' + message)
         $.get("https://api.jebaited.net/botMsg/" + chatSettings.token + "/" + message, function(data) {
             console.log('sent message via jebaited.net')
         })

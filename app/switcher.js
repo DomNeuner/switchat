@@ -2,7 +2,8 @@
 
 var sendingEnabled = false;
 var chatService;
-var sceneList = obsSettings.sceneList;
+var allowedScenes = obsSettings.sceneAllowedList;
+var blockedScenes = obsSettings.sceneBlockList;
 
 // loading settings
 
@@ -17,42 +18,62 @@ if (checkVariable(chatSettings.token) == true) {
 
 console.log(sendingEnabled)
 
+console.log(chatService)
+
 // preparing our commands
 
 ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
-if( (flags.broadcaster || flags.mod) && command === "scene" ) {
-    console.log( "!scene was typed in chat" );
-    console.log("param is: " + message)
+    if( (flags.broadcaster || flags.mod) && command === "scene" ) {
+        console.log( "!scene was typed in chat" );
+        console.log("param is: " + message)
 
-    if (message === "list" && sendingEnabled == true) {
-        ComfyJS.Say ( "Here is the list of scenes that you can change to: " + obsSettings.sceneList );
+        if (message === "list" && sendingEnabled == true) {
+            chatPost("Here is the list of scenes that you can change to: " + allowedScenes)
+        }
+
+        if (message === "test" && sendingEnabled == true) {
+            chatPost('hello world')
+        }
+
+        if (message === "help" && sendingEnabled == true || message === "" && sendingEnabled == true) {
+            chatPost( "**MODS ONLY** Use '!scene <scene name>' to change to that scene. Use '!scene list' to see what scenes can be changed to in OBS. Scene name is case-sensitive" )
+        }
+
+        if (allowedScenes.includes(message) == true && blockedScenes.includes(message) == false) {
+            console.log('allowed:' + allowedScenes.includes(message))
+            console.log('blocked:' + blockedScenes.includes(message))
+            
+            obs.send('SetCurrentScene', {
+                'scene-name': message
+            });
+        }
+
+        if (blockedScenes.includes(message) == true) {
+            console.log('allowed:' + allowedScenes.includes(message))
+            console.log('blocked:' + blockedScenes.includes(message))
+
+            if (sendingEnabled == true) {
+                chatPost("Changing to this scene has been explicitly blocked by the broadcaster.")
+            }
+        }
+
+        if (allowedScenes.includes(message) == false && blockedScenes.includes(message) == false && message !== "list") {
+            console.log('invalid scene selected')
+
+            if (sendingEnabled == true) {
+                chatPost("This scene is not enabled for switching or it is a typo (remember scene names are cAsE-sensitive). Please change this in the settings if it needs to be enabled.")
+            }
+        }
     }
 
-    if (message === "test" && sendingEnabled == true) {
-        chatPost('hello world')
+    if( (!flags.broadcaster && !flags.mod) && command === "scene") {
+        console.log( "!scene was typed in chat" );
+        console.log("it wasn't a mod")   
+
+        if (sendingEnabled == true) {     
+            chatPost("Hey @" + user +", only mods and the streamer can use this command, sorry!")
+        }
     }
-
-    if (message === "help" && sendingEnabled == true || message === "" && sendingEnabled == true) {
-        ComfyJS.Say ( "Use '!scene <scene name>' to change to that scene. Use '!scene list' to see what scenes can be changed to in OBS" );
-    }
-
-    if (sceneList.includes(message) == true) {
-        console.log('sc' + sceneList.includes(message))
-        
-        obs.send('SetCurrentScene', {
-            'scene-name': message
-        });
-    }
-
-
-}
-
-if( (!flags.broadcaster && !flags.mod) && command === "scene" && sendingEnabled == true ) {
-    console.log( "!scene was typed in chat" );
-    console.log("it wasn't a mod")
-    
-    ComfyJS.Say ( "Hey @" + user +", only mods and the streamer can use this command, sorry!" );
-}
 
 }
 
@@ -69,6 +90,8 @@ obs.on('error', err => {
 
 if (sendingEnabled == true && chatService === "twitch") {
     ComfyJS.Init( twitchSettings.channel, chatSettings.token );
+    console.log('init with twitch chatbot')
 } else {
     ComfyJS.Init( twitchSettings.channel );
+    console.log('init with streamelements chatbot')
 }
