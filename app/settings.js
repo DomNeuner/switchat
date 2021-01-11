@@ -7,13 +7,13 @@
 
 // REQUIRED
 var twitchSettings = {
-    channel : "domneuner"
+    channel : "channelname"
 }
 
 // totally optional
 var chatSettings = {
-    service: "twitch",    
-    token : "oauth:6xipletdn20rwbdfgve1m7oeqsg82a"
+    service: "",    
+    token : ""
 }
 
 
@@ -26,6 +26,6 @@ var obsSettings = {
     url : "localhost",
     port: "4444",
     password : "", 
-    sceneAllowedList : ["game", "just chatting", "scene3"],
-    sceneBlockList : ["Scene", "sceneB", "sceneC"]
+    sceneAllowedList : ["scene1", "scene2", "scene3"],
+    sceneBlockList : ["sceneB", "sceneB", "sceneC"]
 }
