@@ -50,13 +50,13 @@ Hey! This is only optional because you may have set it up already... you definit
 
 1. Download the plugin from the Websockets Github page
    * Go to [Palakis/obs-websocket/releases](https://github.com/Palakis/obs-websocket/releases) and scroll to Assets and download your relevant installer. If you're one windows, I recommend the `obs-websocket-4.8.0-Windows-Installer.exe` as it's the easiest method!
-    ![](/switchat/install.md%20images/websocket_download.png)
+    ![](/install.md%20images/websocket_download.png?raw=true)
 2. Install the plugin
    * **Using the installer (recommended, works only with combined 32/64-bit installations)**: download it, launch it and follow the instructions.
     * **Using the obs-websocket-4.8.0-Windows.zip archive**: copy the contents of the archive to the root of your OBS Studio installation folder `(either C:\Program Files\obs-studio or C:\Program Files (x86)\obs-studio)`.
     * **Using macOS**: why? but uh, run the pkg :man_shrugging:
 3. (Optional) Configure the plugin
-    ![](/switchat/install.md%20images/websocket_config.png)
+    ![](/install.md%20images/websocket_config.png?raw=true)
     You don't need to make any changes here for Switchat to work. However, if you enable authentication (recommended), you will need to ensure you copy the password in to the `settings.js` file
 
 ### Setting up chat messages
@@ -71,11 +71,11 @@ You can use any account you want for this, either your main account (i.e DomNeun
 1. Go to [twitchapps.com/tmi](https://twitchapps.com/tmi/) and click "Connect". Ensure that the account it connects is the one you want to use as the bot.
 1. Copy the code that appears on screen in to the `token` field in `settings.js`
 
-    ![](/switchat/install.md%20images/tmi_confirm.png)
+    ![](/install.md%20images/tmi_confirm.png?raw=true)
 
 1. Set `service` in `settings.js` to `twitch`
 
-    ![](/switchat/install.md%20images/settings_twitch.png)
+    ![](/install.md%20images/settings_twitch.png?raw=true)
 
 1. Save `settings.js`
 1. You completed the final level, GG.
@@ -87,17 +87,17 @@ Okay cool, you're using Streamelements as your chatbot already? Coolio, we can m
 1. Go to [jebaited.net](https://jebaited.net) and signin with your StreamElements account.
 2. Once signed in go to the [API Tokens](https://jebaited.net/tokens/) page.
 
-    ![](/switchat/install.md%20images/jebaited_settings.png)
+    ![](/install.md%20images/jebaited_settings.png?raw=true)
 
 1. Added a description to your new token (i.e Switchat)
 1. Click the blue button and select `botMsg`.
 1. Click `Add Token`
 
-    ![](/switchat/install.md%20images/jebaited_token.png)
+    ![](/install.md%20images/jebaited_token.png?raw=true)
 
 1. Copy your token from the `Current tokens:` section to the `token` field in `settings.js`
 1. Set `service` in `settings.js` to `streamelements`
-    ![](/switchat/install.md%20images/settings_se.png)
+    ![](/install.md%20images/settings_se.png?raw=true)
 
 1. Save `settings.js`
 1. You completed the final level, GG.
